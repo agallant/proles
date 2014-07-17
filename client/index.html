@@ -1,0 +1,38 @@
+<!-- MAIN BOILERPLATE -->
+<head>
+   <title>Proles - Moods of the Masses</title>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+       <div class="container">
+         <a class="navbar-brand" href="#">Proles</a>
+         <ul class="navbar-nav nav">
+           <!--<li class="active"><a href="">Home</a></li>
+           <li><a href="#about">About</a></li>-->
+           <li><a href="https://github.com/soycode/proles">Source</a></li>
+         </ul>
+       </div>
+     </div>
+  </div>
+  <div class="container">
+    {{> trending}}
+  </div>
+</body>
+
+<!-- TEMPLATES -->
+<template name="trending">
+  <h1>Moods of the Masses</h1>
+  <small>Pulled fresh from Twitter and analyzed for sentiment!</small>
+  {{#each trends}}
+    <hr>
+    <div>
+      <h4>{{name}}</h4>
+      <em>Keywords</em>: {{keywords}}<br/>
+      <em>Sentiment</em>: {{sentiment}}<br/>
+      <em>More from</em>: <a href="{{url}}">Twitter</a> |
+                          <a href="https://duckduckgo.com/?q={{query}}">DuckDuckGo</a><br/>
+    </div>
+  {{/each}}<hr>
+  <small>These trends are fresh as of: {{trendtime}}</small><br/>
+</template>
