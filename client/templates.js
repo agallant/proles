@@ -8,7 +8,7 @@ Template.trending.trendtime = function() {
   var trend_time = TrendTime.findOne();
   if (typeof trend_time !== 'undefined') {
     // Seems to return newer on client side than server
-    return Date(trend_time.last_insert_stamp);
+    return new Date(trend_time.last_insert_stamp);
   } else {
     return 'N/A';
   }

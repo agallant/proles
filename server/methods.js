@@ -11,7 +11,7 @@ Meteor.methods({
     }
     //console.log('TREND AGE: ' + trend_age);
     if (trend_age >= 300000) {
-      getTrends()();  // see twitter.js
+      getTrends();  // see twitter.js
     }
   }
 });
