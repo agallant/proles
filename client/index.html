@@ -28,11 +28,15 @@
     <hr>
     <div>
       <h4>{{name}}</h4>
-      <em>Keywords</em>: {{keywords}}<br/>
-      <em>Sentiment</em>: {{sentiment}}<br/>
-      <em>More from</em>: <a href="{{url}}">Twitter</a> |
-                          <a href="https://duckduckgo.com/?q={{query}}">DuckDuckGo</a><br/>
+      <!-- Only load rest if trends actually have loaded -->
+      {{#if trendtime}}
+        <em>Keywords</em>: {{keywords}}<br/>
+        <em>Sentiment</em>: {{sentiment}}<br/>
+        <em>More from</em>: <a href="{{url}}">Twitter</a> |
+                            <a href="https://duckduckgo.com/?q={{query}}">DuckDuckGo</a><br/>
+      {{/if}}
     </div>
   {{/each}}<hr>
   <small>These trends are fresh as of: {{trendtime}}</small><br/>
+  <small>and will automatically update every 5 minutes</small><br/>
 </template>

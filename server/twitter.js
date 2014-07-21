@@ -31,14 +31,14 @@ getTrends = function() {
       'trends/place', {id: '23424977', exclude: 'hashtags'},
       Meteor.bindEnvironment(function(err, trend_data, response) {
         Trends.remove({});  // remove old trends, we only care about fresh
-        // Find tweets about the trend for further (sentiment) analysis
-        for (var i in trend_data[0].trends) {
-          getTweets(i, trend_data)();  // in closure so i actually iterates
-        }
         // Update the time last inserted
         TrendTime.remove({});
         TrendTime.insert({last_insert_stamp: Date.parse(trend_data[0].as_of)});
         console.log('INSERTED: ' + trend_data[0].as_of);
+        // Find tweets about the trend for further (sentiment) analysis
+        for (var i in trend_data[0].trends) {
+          getTweets(i, trend_data)();  // in closure so i actually iterates
+        }
       })
     );
   }
