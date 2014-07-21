@@ -19,4 +19,6 @@ Meteor.startup(function () {
   Meteor.publish('trend-time', function() {
     return TrendTime.find();
   });
+  // Refresh trends every 5 mins as that's as often as they change
+  Meteor.setInterval(getTrends, 300000);
 });

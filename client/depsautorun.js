@@ -5,6 +5,4 @@ Deps.autorun(function () {
   Meteor.subscribe('trend-time');
   Trends = new Meteor.Collection('trends');
   TrendTime = new Meteor.Collection('trendtime');
-  // Pull fresh trends!
-  Meteor.call('trends');
 });

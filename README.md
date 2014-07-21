@@ -10,7 +10,7 @@ This repository contains a simple [Meteor-powered](https://the.meteor.com/) web 
     mrt start
 
 Right now it's a pretty simple and minimal "proof of concept", but still interesting in that it gives a quick summary of popular things going on. Some natural expansions I'll hopefully get to pursue (in rough priority order):
-- Finish figuring out Meteor subscription and reactive stuff so the trends automatically update without refreshing the page (and just generally clean up things, write tests, make sure the code is idiomatic, etc.)
+- Clean up things, write tests, make sure the code is idiomatic, etc.
 - More language processing/cleanup - porting/stemming, stop words, etc. (the sentiment library does tokenize already but more processing may help)
 - Incorporate other languages (and possibly translate to English for summary/homogeneity)
 - Incorporate other sources of trends (news, other social media)

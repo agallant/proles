@@ -3,7 +3,7 @@
 
 Meteor.methods({
   trends: function() {
-    // Check how old the trends are
+    // Check how old the trends are to ensure we never pull too often
     var trend_time = TrendTime.findOne();
     var trend_age = 300000;  // if trends undefined will set older age
     if (typeof trend_time !== 'undefined') {

@@ -28,6 +28,7 @@ getTrends = function() {
   return function() {
     //console.log('getting trends');
     Twit.get(
+      // Place id for United States, consider going to 1 for global
       'trends/place', {id: '23424977', exclude: 'hashtags'},
       Meteor.bindEnvironment(function(err, trend_data, response) {
         Trends.remove({});  // remove old trends, we only care about fresh
