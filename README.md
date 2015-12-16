@@ -18,4 +18,4 @@ Right now it's a pretty simple and minimal "proof of concept", but still interes
 - Time: show history (past trends), and possibly show what is trending over larger windows than just "right now" (e.g. like a weekly/monthly/annual "zeitgeist")
 - Pull in better/more secondary information (recognize tags/geo data, have inline hide/show info boxes to provide brief summaries, etc.)
 
-But overall, this provides a mostly clean starting point of a pure JavaScript web application. Thanks for checking it out! 
+But overall, this provides a mostly clean starting point of a pure JavaScript web application. Thanks for checking it out!

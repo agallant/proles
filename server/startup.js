@@ -1,8 +1,7 @@
 Meteor.startup(function () {
   // AFINN-based sentiment: https://github.com/thisandagain/sentiment
-  Sentiment = Meteor.require('sentiment');
   // Set up Twitter API
-  Twit = new TwitMaker({
+  Twit = new Twit({
     // Put your Twitter API access keys/tokens here
     consumer_key: '',
     consumer_secret: '',
