@@ -10,7 +10,7 @@ getTweets = function(i, trend_data) {
         var tweet_text = tweet_data.statuses.map(function(t) {
           return t.text;
         }).join(' ');
-        var tweet_sentiment = Sentiment(tweet_text);
+        var tweet_sentiment = sentiment(tweet_text);
         // Sentiment of all the tweets divided by # tweets to scale
         trend_data[0].trends[i].sentiment = tweet_sentiment['score'] / 100;
         // For now just returning 20 distinct keywords, TODO: something smarter
