@@ -9,7 +9,7 @@ Template.trending.trends = function() {
   }
   // Trends are loaded!
   return Trends.find();
-}
+};
 
 Template.trending.trendtime = function() {
   var trend_time = TrendTime.findOne();
@@ -17,4 +17,4 @@ Template.trending.trendtime = function() {
     // Seems to return newer on client side than server
     return new Date(trend_time.last_insert_stamp);
   }
-}
+};

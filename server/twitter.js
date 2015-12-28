@@ -5,14 +5,14 @@ getTweets = function(i, trend_data) {
     Twit.get(
       'search/tweets', {q: trend_data[0].trends[i].query,  count: 100},
       Meteor.bindEnvironment(function(err, tweet_data, response) {
-        trend_data[0].trends[i]['tweets'] = tweet_data['statuses'];
+        trend_data[0].trends[i].tweets = tweet_data.statuses;
         // Join all the tweets together to calculate their sentiment
         var tweet_text = tweet_data.statuses.map(function(t) {
           return t.text;
         }).join(' ');
         var tweet_sentiment = sentiment(tweet_text);
         // Sentiment of all the tweets divided by # tweets to scale
-        trend_data[0].trends[i].sentiment = tweet_sentiment['score'] / 100;
+        trend_data[0].trends[i].sentiment = tweet_sentiment.score / 100;
         // For now just returning 20 distinct keywords, TODO: something smarter
         var keywords = tweet_sentiment.words.filter(function(elem, pos, self) {
           return self.indexOf(elem) === pos;
@@ -21,7 +21,7 @@ getTweets = function(i, trend_data) {
         Trends.insert(trend_data[0].trends[i]);
       })
     );
-  }
+  };
 };
 
 getTrends = function() {
@@ -42,5 +42,5 @@ getTrends = function() {
         }
       })
     );
-  }
+  };
 }();
