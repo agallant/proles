@@ -3,10 +3,10 @@ Meteor.startup(function () {
   // Set up Twitter API
   Twit = new Twit({
     // Put your Twitter API access keys/tokens here
-    consumer_key: '',
-    consumer_secret: '',
-    access_token: '',
-    access_token_secret: ''
+    consumer_key: Meteor.settings.twitter.consumer_key,
+    consumer_secret: Meteor.settings.twitter.consumer_key,
+    access_token: Meteor.settings.twitter.consumer_key,
+    access_token_secret: Meteor.settings.twitter.consumer_key
   });
   // Set up MongoDB collections
   Trends = new Meteor.Collection('trends');

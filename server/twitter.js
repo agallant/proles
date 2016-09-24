@@ -1,7 +1,7 @@
 // Methods for calling Twitter API using twit package
 getTweets = function(i, trend_data) {
   return function() {
-    //console.log('getting tweets');
+    console.log('getting tweets');
     Twit.get(
       'search/tweets', {q: trend_data[0].trends[i].query,  count: 100},
       Meteor.bindEnvironment(function(err, tweet_data, response) {
@@ -26,7 +26,7 @@ getTweets = function(i, trend_data) {
 
 getTrends = function() {
   return function() {
-    //console.log('getting trends');
+    console.log('getting trends');
     Twit.get(
       // Place id for United States, consider going to 1 for global
       'trends/place', {id: '23424977', exclude: 'hashtags'},

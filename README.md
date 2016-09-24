@@ -4,10 +4,24 @@ Proles - Moods of the Masses
 This repository contains a simple [Meteor-powered](https://the.meteor.com/) web application that pulls current trends from the [Twitter API](https://dev.twitter.com/) and uses [AFINN-based sentiment analysis](https://www.npmjs.org/package/sentiment) on the tweets (currently US-only to make language processing a little easier) related to the trend to provide a summary of its sentiment and keywords. You can check it out at [proles.net](http://proles.net/), and to actually run it yourself:
 
     curl https://install.meteor.com/ | sh
-    meteor create proles
-    # clone this repo however you choose and stick it in proles/
+    git clone https://github.com/soycode/proles
     cd proles
-    meteor start
+    touch settings.json
+
+You'll then need to put your Twitter API credentials (read-only permission is fine) in the settings.json file as follows:
+
+    {
+      "twitter": {
+        "consumer_key": "your_consumer_key",
+        "consumer_secret": "your_consumer_secret",
+        "access_token": "your_access_token",
+        "access_token_secret": "your_access_token_secret"
+      }
+    }
+
+Finally start it up:
+
+    meteor --settings settings.json
 
 Right now it's a pretty simple and minimal "proof of concept", but still interesting in that it gives a quick summary of popular things going on. Some natural expansions I'll hopefully get to pursue (in rough priority order):
 - Clean up things, write tests, make sure the code is idiomatic, etc.
