@@ -4,9 +4,9 @@ Meteor.startup(function () {
   Twit = new Twit({
     // Put your Twitter API access keys/tokens here
     consumer_key: Meteor.settings.twitter.consumer_key,
-    consumer_secret: Meteor.settings.twitter.consumer_key,
-    access_token: Meteor.settings.twitter.consumer_key,
-    access_token_secret: Meteor.settings.twitter.consumer_key
+    consumer_secret: Meteor.settings.twitter.consumer_secret,
+    access_token: Meteor.settings.twitter.access_token,
+    access_token_secret: Meteor.settings.twitter.access_token_secret
   });
   // Set up MongoDB collections
   Trends = new Meteor.Collection('trends');
@@ -18,6 +18,7 @@ Meteor.startup(function () {
   Meteor.publish('trend-time', function() {
     return TrendTime.find();
   });
+  getTrends();
   // Refresh trends every 5 mins as that's as often as they change
   Meteor.setInterval(getTrends, 300000);
 });
